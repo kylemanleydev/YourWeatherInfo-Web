@@ -9,4 +9,4 @@ Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The 
 ## Config
 
 Create an account and add your API Key from https://www.weatherapi.com/ to the TypeScript file below
-YourWeatherInfo-Web\src\environments\environment.ts
+src\environments\environment.ts
