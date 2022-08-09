@@ -1,0 +1,118 @@
+:root {
+    --main-yellow: #ffc675;
+    --dark-grey: #5c5c5c;
+    --light-grey-2: #ededeb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lota Grotesque W05 Bold,sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form #search-field {
+    text-align: center;
+
+}
+
+#search-form {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: baseline;
+}
+
+h1 {
+    color: #000;
+    text-align: center;
+}
+
+.container {
+    width: 400px;
+    height: 80vh;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px var(--dark-grey);
+    overflow: hidden;
+}
+
+.upper-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    background-color: var(--main-yellow);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.upper-data img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    background-color: var(--light-grey-2);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+
+.temperature {
+    color: #fff;
+    text-align: center;
+    font-size: 4.5em;
+}
+
+.more-info-label {
+    font-size: 1.2em;
+}
+
+.weather-info {
+    text-align: center;
+    padding: .5em;
+    font-size: 1.4em;
+}
+
+.more-info-container img {
+    width: 1.5em;
+    height: 1.5em;
+}

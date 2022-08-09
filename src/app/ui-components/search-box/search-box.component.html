@@ -1,0 +1,22 @@
+<div class="search-container">
+  <h1>{{ searchHeader }}</h1>
+  <form id="search-form" [formGroup]="searchForm" (ngSubmit)="sendZipcode()">
+    <mat-form-field id="search-field" appearance="fill" [hideRequiredMarker]=true>
+      <mat-label for="zipcode">Zipcode</mat-label>
+      <input matInput id="zipcode" formControlName="zipcode" maxlength="5" placeholder="Ex. 01950" >
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Search</button>
+  </form>
+  <small class="text-danger"
+    *ngIf="searchForm.touched && searchForm.get('zipcode')?.hasError('required')">
+    This field is required <br>
+  </small>
+  <small class="text-danger"
+    *ngIf="searchForm.get('zipcode')?.hasError('minlength')">
+    The minimum length for this field is 5 characters. <br>
+  </small>
+  <small class="text-danger"
+    *ngIf="searchForm.get('zipcode')?.hasError('pattern')">
+    This field can only contain numeric characters
+  </small>
+</div>
