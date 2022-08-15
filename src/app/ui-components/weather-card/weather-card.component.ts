@@ -1,12 +1,9 @@
-import { Component, ComponentFactoryResolver, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { WeatherData } from 'src/app/models/weather.model';
 import { fetchWeather } from 'src/app/redux/weather.actions';
-import { weatherReducer } from 'src/app/redux/weather.reducer';
 import { selectWeatherData } from 'src/app/redux/weather.selectors';
-import { WeatherService } from 'src/app/services/weather.service';
-import { WeatherazureService } from 'src/app/services/weatherazure.service';
 
 @Component({
   selector: 'weather-card',
@@ -24,15 +21,13 @@ export class WeatherCardComponent implements OnChanges, OnInit {
 
   constructor(
     private store: Store<{ weatherData: WeatherData }>,
-    private WeatherazureService: WeatherazureService
     ) {}
 
   //Dispatch fetchWeather redux action on changes to zipcode
   ngOnChanges(): void {
     if(this.zipcode !== '') {
       console.warn("[weather-card] dispatched a fetch weather action");
-      //this.store.dispatch(fetchWeather({zipcode: this.zipcode}));
-      this.WeatherazureService.getWeatherData(this.zipcode).subscribe((weatherData: WeatherData) => this.weatherData = weatherData);
+      this.store.dispatch(fetchWeather({zipcode: this.zipcode}));
     }
   }
 

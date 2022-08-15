@@ -9,7 +9,6 @@ import { WeatherData } from '../models/weather.model';
 export class WeatherazureService {
   constructor(private httpService: HttpClient) { }
 
-  //headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
   httpHeaders = new HttpHeaders({
     'Content-Type' : 'application/json',
     'Access-Control-Allow-Origin' : '*'

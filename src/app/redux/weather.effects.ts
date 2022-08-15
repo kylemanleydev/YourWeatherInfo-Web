@@ -9,7 +9,6 @@ import { fetchWeather, storeWeather } from './weather.actions';
 @Injectable()
 export class WeatherEffects {
 
-  //this.WeatherazureService.getWeatherData(this.zipcode).subscribe((weatherData: WeatherData) => this.weatherData = weatherData);
   fetchWeather$ = createEffect(() => this.actions$.pipe(
     ofType(fetchWeather),
     mergeMap((payload) => this.WeatherazureService.getWeatherData(payload.zipcode)
@@ -23,6 +22,5 @@ export class WeatherEffects {
   constructor(
     private WeatherazureService: WeatherazureService,
     private actions$: Actions,
-    private weatherService: WeatherService
   ) {}
 }
