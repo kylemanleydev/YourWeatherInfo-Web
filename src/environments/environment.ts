@@ -2,6 +2,10 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+/*
+ * Environment variables if you want to setup this application as a frontend only application
+ * to make requests from the clientside for use with src\app\services\weather.service.ts
+ */
 export const environment = {
   production: false,
   weatherApiBaseUrl: 'https://api.weatherapi.com/v1/current.json',
