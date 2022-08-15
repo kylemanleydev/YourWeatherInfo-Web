@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of, throwError } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { WeatherService } from '../services/weather.service';
 import { WeatherazureService } from '../services/weatherazure.service';
@@ -14,7 +14,10 @@ export class WeatherEffects {
     mergeMap((payload) => this.WeatherazureService.getWeatherData(payload.zipcode)
       .pipe(
         map(weatherData => storeWeather({weatherData: weatherData})),
-        catchError(() => EMPTY),
+        catchError((e) => {
+          alert("Invalid zipcode"); 
+          return throwError(() => (e));
+        }),
       ))
     )
   );

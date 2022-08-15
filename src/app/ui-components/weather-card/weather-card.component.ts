@@ -32,7 +32,6 @@ export class WeatherCardComponent implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-      this.store.select(selectWeatherData).subscribe(data => console.log(data));
       this.$storeWeatherData = this.store.select(selectWeatherData);
   }
 

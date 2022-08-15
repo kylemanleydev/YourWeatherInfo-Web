@@ -1,5 +1,5 @@
 <ng-container *ngIf="($storeWeatherData | async) as weatherData">
-  <div class="container" *ngIf="weatherData['weatherData']">
+<div class="container" *ngIf="weatherData['weatherData']">
 <div class="upper-data">
 <img src="../assets/sunset.jpg">
     <div class="weather-data" *ngIf="weatherData['weatherData'].Location && weatherData['weatherData'].Current">
